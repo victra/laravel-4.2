@@ -17,6 +17,7 @@
 			<li><a href="{{ URL::to('user_list') }}" class="btn btn-primary">User</a></li>
 			<li><a href="{{ URL::to('article_list') }}" class="btn btn-primary">Article</a></li>
 			<li><a href="{{ URL::to('comment_list') }}" class="btn btn-primary">Comment</a></li>
+			<li><a href="{{ URL::to('relation') }}" class="btn btn-primary">Relation</a></li>
 		</ul><br>
 		@yield('content')
 	</body>

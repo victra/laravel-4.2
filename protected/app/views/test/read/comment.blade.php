@@ -11,6 +11,7 @@
        <th>COMMENT TYPE</th>
        <th>CREATED AT</th>
        <th>UPDATED AT</th>
+       <th>DELETE</th>
     </tr>
     @foreach($data_comment as $comments)
       <tr>
@@ -21,6 +22,7 @@
          <td>{{ $comments->commentable_type }}</td>
          <td>{{ $comments->created_at }}</td>
          <td>{{ $comments->updated_at }}</td>
+         <td><a href="{{ 'comment_delete/'.$comments->id }}" class="btn btn-primary">Delete</a></td>
       </tr>
     @endforeach
   </table>

@@ -29,6 +29,10 @@ Route::get('comment_list', 'TestReadController@comment');
 // test update artikel
 Route::get('article_edit/{id}', 'TestUpdateController@article');
 Route::post('article_update/{id}', array('as' => 'article_update', 'uses' => 'TestUpdateController@articlepost'));
+// test relasi database
+Route::get('relation', 'TestRelationController@index');
+// test delete comments
+Route::get('comment_delete/{id}', 'TestDeleteController@comment');
 
 Route::get('relasi', 'TestArticleController@article');
 

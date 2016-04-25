@@ -8,9 +8,9 @@ class TestUpdatecontroller extends BaseController
 	    $articlebyid = DB::table('articles')->where('id', '=' ,$id)->first();
 	    $articlebyid =[ 'articlebyid' => $articlebyid ];
 	  	return View::make('test.update.article', $articlebyid);
-		//var_dump($_POST);
+		//var_dump($articlebyid);
 	}
-	public function article_update($id)
+	public function articlepost($id)
 	{
 	    $validator = Validator::make(
 	        Input::all(),
@@ -21,16 +21,16 @@ class TestUpdatecontroller extends BaseController
 	        )
 	    );
 	    if ($validator->passes()) {
-	        $article = new Article;
+	        $article = Article::find($id);
 	        $article->user_id   = Input::get('userid');
 	        $article->title     = Input::get('title');
 	        $article->content   = Input::get('content');
 	        $article->save();
 
-	        return Redirect::to('article_create')->with('register_success', 'Selamat, Anda telah resmi menjadi pengangguran, silakan cek email untuk aktivasi :P');
+	        return Redirect::to('article_edit/'.$id)->with('register_success', 'Selamat, Anda telah resmi menjadi pengangguran, silakan cek email untuk aktivasi :P');
 	    }
 	    else {
-	        return Redirect::to('article_create')
+	        return Redirect::to('article_edit/'.$id)
 	            ->withErrors($validator)
 	            ->withInput();
 	    }

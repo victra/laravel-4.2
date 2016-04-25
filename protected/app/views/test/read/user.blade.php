@@ -5,6 +5,7 @@
   <table class="table">
     <tr>
        <th>ID</th>
+       <th>NAME</th>
        <th>EMAIL</th>
        <th>CREATED AT</th>
        <th>UPDATED AT</th>
@@ -12,6 +13,7 @@
     @foreach($data_user as $users)
       <tr>
          <td>{{ $users->id }}</td>
+         <td>{{ $users->fname }} {{ $users->lname }}</td>
          <td>{{ $users->email }}</td>
          <td>{{ $users->created_at }}</td>
          <td>{{ $users->updated_at }}</td>

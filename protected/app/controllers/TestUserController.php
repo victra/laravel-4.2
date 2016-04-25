@@ -7,7 +7,7 @@ class TestUserController extends BaseController
         //$profile = User::all();
         $profile = User::find($id);
         $content = Article::where('user_id', '=', $id)->get();
-        return View::make('test.read.profile')->with('data_profile', $profile);
+        return View::make('test.mockup.profile')->with('data_profile', $profile);
         
         //$profile = DB::table('users')->where('id', $id)->first();
         //return View::make('test.read.profile')->with('data_content', $content);

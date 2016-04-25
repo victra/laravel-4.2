@@ -14,13 +14,17 @@ class DatabaseSeeder extends Seeder {
 		//$this->call('UserTableSeeder');
 		\DB::table('users')->insert(array (
 			array (
+			'fname' => 'Dracule',
+			'lname' => 'Mihawk',
 			'email' => 'Mihawk@mail.com',
 			'password' => 'rahasiakampret',
 			'created_at' => '2016-04-21 16:20:55',
 			'updated_at' => '2016-04-21 18:27:55',
 			),
 			array (
-			'email' => 'Dracule@mail.com',
+			'fname' => 'Trafa',
+			'lname' => 'Law',
+			'email' => 'Law@mail.com',
 			'password' => 'rahasiakampret',
 			'created_at' => '2016-04-21 16:20:55',
 			'updated_at' => '2016-04-21 18:27:55',
