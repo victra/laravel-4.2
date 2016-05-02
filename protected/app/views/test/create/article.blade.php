@@ -12,7 +12,7 @@
         <form method="post" action="" class="forms">
             <h3>Create Article</h3>
             <label>
-                User ID <span class="error">{{ $errors->first('userid') }}</span>
+                User ID <span class="error">{{ $errors->first('user id') }}</span>
                 <input type="text" name="userid" value="{{ Form::old('userid') }}" class="width-50" />
             </label>
             <label>

@@ -12,6 +12,14 @@
         <form method="post" action="" class="forms">
             <h3>Create User</h3>
             <label>
+                First Name <span class="error"><?php echo $errors->first('firstname') ?></span>
+                <input type="text" name="firstname" value="<?php echo Form::old('firstname') ?>" class="width-50" />
+            </label>
+            <label>
+                Last Name <span class="error"><?php echo $errors->first('lastname') ?></span>
+                <input type="text" name="lastname" value="<?php echo Form::old('lastname') ?>" class="width-50" />
+            </label>
+            <label>
                 Email <span class="error"><?php echo $errors->first('email') ?></span>
                 <input type="text" name="email" value="<?php echo Form::old('email') ?>" class="width-50" />
             </label>

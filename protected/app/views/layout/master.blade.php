@@ -22,5 +22,3 @@
 		@yield('content')
 	</body>
 </html>
-{{ HTML::script('js/npm.js') }}
-{{ HTML::script('js/bootstrap.min.js') }}

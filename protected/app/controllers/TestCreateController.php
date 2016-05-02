@@ -12,13 +12,17 @@ class TestCreateController extends BaseController{
     $validator = Validator::make(
     	Input::all(),
     	array(
-    		"email"					=> "required|email|unique:users,email",
-    		"password"              => "required|min:6",
+            "firstname"             => "required",
+            "lastname"              => "required",
+    		    "email"					        => "required|email|unique:users,email",
+    		    "password"              => "required|min:6",
             "password_confirmation" => "same:password",
     	)
     );
     if ($validator->passes()) {
     	$user = new User;
+      $user->fname    = Input::get('firstname');
+      $user->lname    = Input::get('lastname');
 	    $user->email    = Input::get('email');
 	    $user->password = Hash::make(Input::get('password'));
 	    $user->save();
