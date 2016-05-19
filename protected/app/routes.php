@@ -23,7 +23,7 @@ Route::post('user_create', 'TestCreateController@userpost');
 Route::get('article_create', 'TestCreateController@article');
 Route::post('article_create', 'TestCreateController@articlepost');
 // test show
-Route::get('user_list', 'TestReadController@user');
+Route::get('user_list', 'Controller\WEB\TestReadController@user');
 Route::get('article_list', 'TestReadController@article');
 Route::get('comment_list', 'TestReadController@comment');
 // test update artikel

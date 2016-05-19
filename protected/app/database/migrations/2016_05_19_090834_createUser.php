@@ -1,9 +1,9 @@
 <?php
-
+//ini database laravel
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Article extends Migration {
+class createUser extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,13 @@ class Article extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('articles', function(Blueprint $table)
+		Schema::create('users', function($table)
 		{
 			$table->increments('id');
-			$table->integer('user_id');
-			$table->string('title');
-			$table->string('content');
+			$table->string('fname');
+			$table->string('lname');
+			$table->string('email');
+			$table->string('password');
 			$table->timestamps();
 		});
 	}
@@ -29,7 +30,7 @@ class Article extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('articles');
+		Schema::drop('users');
 	}
 
 }

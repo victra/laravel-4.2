@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		//$this->call('UserTableSeeder');
+		\DB::table('users')->truncate();
 		\DB::table('users')->insert(array (
 			array (
 			'fname' => 'Dracule',
@@ -57,7 +58,7 @@ class DatabaseSeeder extends Seeder {
 			'updated_at' => '2016-04-21 18:27:55',
 			),
 		));*/
-
+		\DB::table('articles')->truncate();
 		\DB::table('articles')->insert(array (
 			array (
 			'user_id' => '1',
@@ -74,7 +75,7 @@ class DatabaseSeeder extends Seeder {
 			'updated_at' => '2016-04-21 18:27:55',
 			),
 		));
-
+		\DB::table('comments')->truncate();
 		\DB::table('comments')->insert(array (
 			array (
 			'content' => '1blablablauser',

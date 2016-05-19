@@ -1,7 +1,7 @@
 <?php
 //use Model\Article;
 
-class ArticleController extends BaseController 
+class TestArticleController extends BaseController 
 {
     // layout dengan menggunakan blade
     //public $layout  = 'layout';

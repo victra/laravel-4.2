@@ -79,3 +79,21 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Custom
+|--------------------------------------------------------------------------
+*/
+
+App::missing(function(Exception $exception)
+{
+	$code = $exception->getStatusCode();
+    $message = 'URL: '.Request::url().' not found | CODE:'.$code.' - '.$exception;
+
+    Log::error($message);
+    //\Model\ErrorLog::storeLog(Request::url(), $exception->getTraceAsString(), $code);
+    return Response::view('web.404-not-found', array(), 404);
+});
+
+require_once app_path().'/constants.php';
